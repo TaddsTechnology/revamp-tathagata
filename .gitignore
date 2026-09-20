@@ -22,7 +22,15 @@
 
 # misc
 .DS_Store
+Thumbs.db
 *.pem
+
+# editors & OS
+.vscode/*
+!.vscode/extensions.json
+.idea/
+*.swp
+*.swo
 
 # debug
 npm-debug.log*
@@ -35,6 +43,10 @@ yarn-error.log*
 
 # vercel
 .vercel
+
+# opencode / agent scratch
+.opencode/
+.tool-output/
 
 # typescript
 *.tsbuildinfo
