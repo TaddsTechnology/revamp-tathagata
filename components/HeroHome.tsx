@@ -4,7 +4,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
-import { IMAGES } from "@/lib/data";
 import { StatusChip } from "./StatusChip";
 
 export function HeroHome() {
@@ -23,35 +22,35 @@ export function HeroHome() {
   }, []);
 
   return (
-    <div ref={root} className="relative flex min-h-[100svh] items-end overflow-hidden">
+    <div ref={root} className="relative flex min-h-[100svh] items-end overflow-hidden bg-black">
       <Image
-        src={IMAGES.team}
-        alt=""
+        src="/ascii-hero.png"
+        alt="ASCII-art landscape of glowing code forming a tree at night"
         fill
         priority
         sizes="100vw"
         className="object-cover"
       />
-      <div aria-hidden="true" className="scrim-hero absolute inset-0" />
+      <div aria-hidden="true" className="scrim-dark absolute inset-0" />
 
       <div className="container-shell relative w-full pb-20 pt-44 md:pb-24">
         <div className="hero-rise flex flex-wrap items-center gap-3">
           <StatusChip status="active" label="Digital product engineering partner" />
           <StatusChip status="pass" label="Est. 2025" />
         </div>
-        <h1 className="hero-rise headline-fluid mt-6 max-w-[752px] text-[#231F20]">
+        <h1 className="hero-rise headline-fluid mt-6 max-w-[752px] text-white">
           We build scalable technology.
         </h1>
-        <p className="hero-rise mt-5 max-w-[560px] text-[16px] leading-relaxed text-[#231F20]/80">
+        <p className="hero-rise mt-5 max-w-[560px] text-[16px] leading-relaxed text-[#e7e7e7]">
           From AI systems to high-performance web and mobile applications, we
           design and engineer digital products built for growth.
         </p>
         <div className="hero-rise mt-8 flex flex-col gap-3 sm:flex-row">
-          <Link href="/contact" className="btn-square px-8 py-4 text-[20px]">
+          <Link href="/contact" className="btn-square-light px-8 py-4 text-[20px]">
             Start your project
             <span aria-hidden="true" className="text-[12px]">↗</span>
           </Link>
-          <Link href="/projects" className="btn-ghost-square px-8 py-4 text-[20px]">
+          <Link href="/projects" className="btn-ghost-light px-8 py-4 text-[20px]">
             View our work
           </Link>
         </div>
