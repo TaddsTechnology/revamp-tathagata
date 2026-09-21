@@ -64,17 +64,33 @@ export default function Home() {
       <Journey />
 
       <section className="container-shell pb-20 md:pb-28" aria-label="Client feedback">
-        <div className="grid gap-5 md:grid-cols-2">
+        <div className="grid items-stretch gap-5 md:grid-cols-2">
           {TESTIMONIALS.map((t, i) => (
-            <Reveal key={t.name} delay={i * 0.08}>
+            <Reveal key={t.name} delay={i * 0.08} className="h-full">
               <figure className="card-ring flex h-full flex-col bg-[#E8F6FE] p-8">
-                <blockquote className="text-balance text-lg font-medium leading-snug tracking-tight text-[#231F20]">
+                <div className="flex items-center justify-between gap-3">
+                  <span aria-label="Rated 5 out of 5" className="text-lg tracking-[0.2em] text-[#1493cb]">
+                    ★★★★★
+                  </span>
+                  <span aria-hidden="true" className="font-mono text-5xl leading-none text-[#35B7EA]">
+                    &ldquo;
+                  </span>
+                </div>
+                <blockquote className="mt-4 text-balance pb-8 text-lg font-medium leading-snug tracking-tight text-[#231F20]">
                   “{t.quote}”
                 </blockquote>
-                <figcaption className="mt-6 flex flex-wrap items-center gap-x-4 gap-y-1 border-t hairline-ink pt-4">
-                  <span className="tnum font-mono text-sm font-bold text-[#231F20]">{t.name}</span>
-                  <span className="tnum font-mono text-xs text-[#5F6B76]">{t.role}</span>
-                  <span className="tnum w-full font-mono text-xs text-[#0e6e9e]">{t.project}</span>
+                <figcaption className="mt-auto flex items-center gap-4 border-t hairline-ink pt-5">
+                  <span
+                    aria-hidden="true"
+                    className="tnum flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-[#231F20] font-mono text-sm font-bold text-white"
+                  >
+                    {t.name.split(" ").map((w) => w[0]).slice(0, 2).join("")}
+                  </span>
+                  <span className="min-w-0">
+                    <span className="block truncate text-sm font-bold text-[#231F20]">{t.name}</span>
+                    <span className="block truncate font-mono text-xs text-[#5F6B76]">{t.role}</span>
+                  </span>
+                  <span className="tnum ml-auto shrink-0 font-mono text-xs text-[#0e6e9e]">{t.project}</span>
                 </figcaption>
               </figure>
             </Reveal>
