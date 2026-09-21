@@ -66,7 +66,7 @@ export function Footer() {
       <div className="border-t hairline-ink">
         <div className="container-shell flex flex-col gap-2 py-6 sm:flex-row sm:items-center sm:justify-between">
           <p className="tnum font-mono text-xs text-[#5F6B76]">© {new Date().getFullYear()} TATHAGATA TECHNOLOGY</p>
-          <p className="tnum font-mono text-xs text-[#5F6B76]">AHMEDABAD, SHIPPING WEEKLY</p>
+          <p className="tnum font-mono text-xs text-[#5F6B76]">AHMEDABAD</p>
         </div>
       </div>
     </footer>
