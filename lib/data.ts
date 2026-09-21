@@ -361,16 +361,25 @@ export const PARTNER = {
   role: "Outsourcing & collaboration partner",
   quote:
     "Tathagata Technology is our trusted tech partner for outsourcing. Together we deliver end-to-end web and marketing solutions for our clients — on time and with measurable results.",
-  author: "Barot Stock Broker",
+  author: "Varun Gahoi",
   authorRole: "Co-Founder, Pixel Ideas",
 };
 
 export const TESTIMONIALS = [
   {
     quote:
+      "Tathagata Technology transformed our vision into a powerful financial advisory website. Their expertise in Next.js and custom software development delivered a sleek, professional platform that perfectly represents our brand. Highly recommend their team for quality web solutions.",
+    name: "Kandarp Barot",
+    role: "Founder, Finmarg Advisory Services",
+    project: "Finmarg Advisory Website",
+    img: "",
+  },
+  {
+    quote:
       "Tathagata Technology is our trusted tech partner for outsourcing. Together we deliver end-to-end web and marketing solutions for our clients — on time and with measurable results.",
-    name: "Barot Stock Broker",
+    name: "Varun Gahoi",
     role: "Co-Founder, Pixel Ideas",
+    project: "Partnered Delivery & Outsourcing",
     img: "",
   },
 ];

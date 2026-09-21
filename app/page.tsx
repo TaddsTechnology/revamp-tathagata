@@ -10,7 +10,6 @@ import { CTABanner } from "@/components/CTABanner";
 import { PARTNER, TESTIMONIALS } from "@/lib/data";
 
 export default function Home() {
-  const t = TESTIMONIALS[0];
   return (
     <>
       <HeroHome />
@@ -65,20 +64,22 @@ export default function Home() {
       <Journey />
 
       <section className="container-shell pb-20 md:pb-28" aria-label="Client feedback">
-        <Reveal>
-          <figure className="card-ring bg-[#E8F6FE] p-8 md:p-12">
-            <blockquote className="max-w-3xl text-balance text-2xl font-medium leading-snug tracking-tight text-[#231F20] md:text-[2rem]">
-              “{t.quote}”
-            </blockquote>
-            <figcaption className="mt-6 flex items-center gap-4">
-              <span className="tnum font-mono text-sm text-[#231F20]">{t.name}</span>
-              <span className="tnum font-mono text-sm text-[#5F6B76]">{t.role}</span>
-              <span className="tnum ml-auto hidden font-mono text-sm text-[#0e6e9e] sm:block">
-                Partnered delivery
-              </span>
-            </figcaption>
-          </figure>
-        </Reveal>
+        <div className="grid gap-5 md:grid-cols-2">
+          {TESTIMONIALS.map((t, i) => (
+            <Reveal key={t.name} delay={i * 0.08}>
+              <figure className="card-ring flex h-full flex-col bg-[#E8F6FE] p-8">
+                <blockquote className="text-balance text-lg font-medium leading-snug tracking-tight text-[#231F20]">
+                  “{t.quote}”
+                </blockquote>
+                <figcaption className="mt-6 flex flex-wrap items-center gap-x-4 gap-y-1 border-t hairline-ink pt-4">
+                  <span className="tnum font-mono text-sm font-bold text-[#231F20]">{t.name}</span>
+                  <span className="tnum font-mono text-xs text-[#5F6B76]">{t.role}</span>
+                  <span className="tnum w-full font-mono text-xs text-[#0e6e9e]">{t.project}</span>
+                </figcaption>
+              </figure>
+            </Reveal>
+          ))}
+        </div>
         <div className="mt-12">
           <CTABanner />
         </div>
